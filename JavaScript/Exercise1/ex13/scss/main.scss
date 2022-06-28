@@ -1,0 +1,114 @@
+@import 'config';
+.navbar {
+    margin-top: 20px;
+    z-index: 2;
+    width: 100%;
+    
+  }
+  
+  .navbar-default .navbar-nav>li>a {
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: 16px;
+  }
+  
+  .navbar-default {
+    background: transparent;
+    border-color: transparent;
+  }
+  
+  .carousel-inner{
+    height: 75vh;
+  }
+  .carousel-inner .carousel-caption h1 {
+    color: #000000;
+    
+  }
+  .aboutus{
+    width: 80%;
+    margin: 0% 10%;
+    background-color: rgba(0, 255, 255, 0.035);
+    
+        &__bg{
+            position: absolute;
+            height: auto;
+            margin-top: -20rem;
+            margin-left: 30rem;
+            img{
+                width: 500px;
+                height: 500px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        &__content{
+            box-shadow: 1px 0px 10px black;
+            padding: 30px;
+            width: 80%;
+            text-transform: uppercase;
+            .line{
+                width: 10rem;
+                height: 4px;
+                background-color: blue;
+            }
+            h1{
+                padding: 20px 0px;
+                font-size: 30px;
+                span{
+                    
+                    font-weight: 600;
+                }
+                font-weight: 200;
+                color: rgb(0, 0, 52);
+            }
+            &__1{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                div{
+                    p{
+                        font-size: 16px;
+                        padding: 10px;
+                        color: #181818;
+                        span{
+                            color: rgb(0, 0, 70);
+                        }
+                    }
+                }
+                &__contact{
+                    display:flex;
+                    flex-direction: column;
+                    a{
+                        color:rgb(174, 174, 255);
+                    }
+                }
+            }
+        }
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    width: 80%;
+    margin: 5% 10%;
+    &__1{
+        grid-row: 1 / 3;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    &__4{
+      grid-column:2/4;
+      }
+  }
+
+
+  .contactus{
+    width: 100%;
+    height: 80vh;
+    background-image: url("https://images.unsplash.com/photo-1533119408463-b0f487583ff6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
