@@ -1,0 +1,37 @@
+.container{
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+input [type=button]{
+    margin: 2rem;
+}
+
+button{
+    border-radius: 20px;
+    background-color: transparent;
+}
+.bt{
+    color: orangered;
+}
+.num{
+    color: #303030;
+}
+table{
+    border-radius: 20px;
+    width: 60%;
+    height: 400px;
+}
+tr{
+    border-radius: 20px;
+    font-size: 35px;
+}
+#result{
+    width: 95%;
+    margin: 5px 10px;
+    font-size: 25px;
+}
+#history{
+    color: white;
+    padding: 10px;
+}

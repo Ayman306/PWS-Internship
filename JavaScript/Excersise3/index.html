@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container mx-auto w-100">
+    
+    <table class="mx-auto bg-info">
+        <tr><td colspan="4"><input id="result"  type="text" name="" ></td></tr>
+        <tr>
+            <td colspan="2" class="p-1"><input type="button" class="w-100 bt "value="C" onclick="clearScreen()"></td>
+            <!-- <td class="p-1"><input type="button" class="w-100 bt"value="<-" onclick="clear()"></td> -->
+            <td class="p-1"><input type="button" class="w-100 bt"value="%" onclick="calc('%')"></td>
+            <td class="p-1"><input type="button" class="w-100 bt"value="/" onclick="calc('/')"></td>
+        </tr>
+        <tr>
+            <td class="p-1 "><input type="button"class="w-100 num" value="7" onclick="calc('7')"></td>
+            <td class="p-1 "><input type="button"class="w-100 num" value="8" onclick="calc('8')"></td>
+            <td class="p-1 "><input type="button"class="w-100 num" value="9" onclick="calc('9')"></td>
+            <td class="p-1 "><input type="button"class="w-100 bt" value="*" onclick="calc('*')"></td>
+        </tr>
+        <tr>
+            <td class="p-1 "><input type="button"class="w-100 num" value="4" onclick="calc('4')"></td>
+            <td class="p-1 "><input type="button"class="w-100 num" value="5" onclick="calc('5')"></td>
+            <td class="p-1 "><input type="button"class="w-100 num" value="6" onclick="calc('6')"></td>
+            <td class="p-1 "><input type="button"class="w-100 bt" value="-" onclick="calc('-')"></td>
+        </tr>
+        <tr>
+            <td class="p-1 "><input type="button"class="w-100 num" value="1" onclick="calc('1')"></td>
+            <td class="p-1 "><input type="button"class="w-100 num" value="2" onclick="calc('2')"></td>
+            <td class="p-1 "><input type="button"class="w-100 num" value="3" onclick="calc('3')"></td>
+            <td class="p-1 "><input type="button"class="w-100 bt" value="+" onclick="calc('+')"></td>
+        </tr>
+        <tr>
+            <td class="p-1 "colspan="2"><input type="button"class="w-100 num" value="0" onclick="calc('0')"></td>
+            <td class="p-1 "><input type="button"class="w-100 num" value="." onclick="calc('.')"></td>
+            <td class="p-1 " ><input class="w-100 bt"type="button" value="="  onclick="calculate('=')"></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            <div id="history"></div>
+        </td>
+        </tr>
+    </table>
+</div>
+</body>
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
