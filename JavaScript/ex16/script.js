@@ -1901,7 +1901,6 @@ let movies=[{
 ]
 
 
-// console.log(movies[0].imdb.rating)
 
 var count=0,next=0,prev=0;
 function nextPage(){
@@ -1916,7 +1915,6 @@ function prevPage(){
     console.log(prev);
 
 }
-// var id = document.getElementById("_id");
 var slno=document.getElementById("slno");
 var title = document.getElementById("title");            
 var imdb = document.getElementById("imdb");
@@ -1924,15 +1922,12 @@ var tomatoes = document.getElementById("tomatoes");
 var rating =  document.getElementById("rating");
 var plot = document.getElementById("plot");
 
-// var typename = document.getElementById("typename");
 function srtD(s) {
-     //console.log(sel.options[sel.selectedIndex].text);
      if(s==null){
         return;
      }
      sortd=s.options[s.selectedIndex].text;
     console.log(sortd);
-    // return sortd;
 
 }
 function oderD(o){
@@ -1941,7 +1936,6 @@ function oderD(o){
      }
     order=o.options[o.selectedIndex].text;
    console.log(order);
-    // return order;
 }
 var sortd, order;
  
@@ -1995,42 +1989,13 @@ function display(){
                 }); 
                 sortd=null;
                 order=null; 
-            } else if(sortd==="Combined Rating" && order === "Ascending"){
-                count=0;
-                prev=0;
-                next=0;
-                console.log("Combined Rating");
-                // var obj ={};
-                // Object.keys(movies).forEach(function(a){
-                // obj[a] = movies[a].imdb.rating + movies[a].tomatoes.viewer.rating;                    
-                // });
-                // const static_stat = {id: null, name: 'UNASSIGNED'};
-                // let api_data = [{id: 1, name: 'Jhon'}];
-
-                // console.log(api_data.unshift(static_stat));
-
-                // console.log(api_data);
-                // movies.unshift()
-                
-                
-                // movies.unshift(movies[i],cr);
-                
-                
-               
-                sortd=null;
-                order=null;
-            }
-            
-            
-
+            } 
             rating.innerHTML=movies[i].imdb.rating + movies[i].tomatoes.viewer.rating;
-            // id.innerHTML=movies[i]._id;
             slno.innerHTML=count+1;
             title.innerHTML=movies[i].title;
             imdb.innerHTML=movies[i].imdb.rating ;
             tomatoes.innerHTML= movies[i].tomatoes.viewer.rating ;
-            plot.innerHTML=movies[i].plot;
-            // typename.innerHTML=movies[i].__typename;                         
+            plot.innerHTML=movies[i].plot;                       
 
 
             
