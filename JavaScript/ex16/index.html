@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Movie</title>
+</head>
+<body >
+   
+    <table>
+        <!-- <tr>onChange="sortD(this); -->
+            <td>
+                <select id="box2" onChange="srtD(this);">
+                    <option >-Sort By-</option>
+                    <option value="Imdb">Imdb</option>
+                    <option value="Tomatoes">Tomatoes</option>
+                    <option value="Combined Rating">Combined Rating</option>
+                  </select>
+            </td>
+            <td>
+                <select id="box1" onChange="oderD(this);">
+                    <option >-Sort Order-</option>
+                    <option value="Ascending">Ascending</option>
+                    <option value="Decending">Decending</option>
+                  </select>
+            </td>
+            <td>
+                <button onclick="display()">Sort Now</button>
+            </td>
+            
+        </tr>
+        <tr>
+        <!-- <th>ID</th> -->
+        <th>Sl No.</th>
+        <th>Title</th>
+        <th>Imdb</th>
+        <th>Tomatoes</th>
+        <th>Combined Ratings</th>
+        <th>View</th>
+        <!-- <th>Typename</th> -->
+        <tr>
+            <!-- <td id="_id"></td> -->
+            <td id="slno"></td>
+            <td id="title"></td>
+            <td id="imdb"></td>
+            <td id="tomatoes"></td>
+            <td id="rating"></td>
+            <!-- <td id="typename"></td> -->
+            <td id="plot"></td>
+        </tr>
+        </tr>
+        <!-- <tr>
+            <td colspan="3"><button onclick="prevPage(); display();" id="next">Previous</button></td>
+            <td colspan="3"><button onclick="nextPage(); display();" id="prev">Next</button></td>
+        </tr> -->
+        <!-- <tr>           
+            <td style="text-align: center;">SortNow</td>                
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="display(this.value)" id="sortd" value="HtL" >High to Low</button></td>
+            <td colspan="2"><button onclick=" display(this.value)" id="sortd" value="LtH">Low to Hight</button></td>
+        </tr> -->
+    </table>
+    <p id="main"></p>
+</body>
+<!-- <script src="./movies.json"></script> -->
+<script src="./script.js"></script>
+</html>
+
