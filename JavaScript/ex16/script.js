@@ -1901,19 +1901,21 @@ let movies=[{
 ]
 
 
-
 var count=0,next=0,prev=0;
 function nextPage(){
     next=next+1;
     count=count+1;
+    prev=next-1;
     console.log(next);
 }
 function prevPage(){
+    if(prev===0){
+        return;        
+    }
     prev=next-1;
     count=count-1;
     next=next-1;
     console.log(prev);
-
 }
 var slno=document.getElementById("slno");
 var title = document.getElementById("title");            
@@ -1926,70 +1928,68 @@ function srtD(s) {
      if(s==null){
         return;
      }
-     sortd=s.options[s.selectedIndex].text;
+    sortd=s.options[s.selectedIndex].text;
     console.log(sortd);
-
+    i=0;count=0;
 }
 function oderD(o){
     if(o==null){
         return;
      }
     order=o.options[o.selectedIndex].text;
-   console.log(order);
+    console.log(order);
+    i=0;count=0;
 }
-var sortd, order;
- 
+var sortd, order,combinedRating; 
 function display(){
-    
     console.log(sortd);
     console.log(order);
-    
-     
-    for (var i = 0; i <= movies.length; i++) {   
-            
+    for (var i = 0; i <= movies.length; i++) { 
         if(i===count){ 
-
-            if(sortd==="Imdb" && order === "Decending"){
-                count=0;
-                prev=0;
-                next=0;
-                console.log("HIGH TO LOW");
-                movies.sort((a, b) => {
-                    return b.imdb.rating - a.imdb.rating;
-                }); 
-                sortd=null;
-                order=null;
-            }else if(sortd==="Imdb" && order === "Ascending"){
-                count=0;
-                prev=0;
-                next=0;
-                console.log("Low TO High");
-                movies.sort((a, b) => {
-                    return a.imdb.rating - b.imdb.rating;
-                }); 
-                sortd=null;
-                order=null;
-            }else if(sortd==="Tomatoes" && order === "Ascending"){
-                count=0;
-                prev=0;
-                next=0;
-                console.log("Low TO High");
-                movies.sort((a, b) => {
-                    return a.tomatoes.viewer.rating - b.tomatoes.viewer.rating;
-                }); 
-                sortd=null;
-                order=null;
-            }   else if(sortd==="Tomatoes" && order === "Decending"){
-                count=0;
-                prev=0;
-                next=0;
-                console.log("HIGH TO LOW");
-                movies.sort((a, b) => {
-                    return a.tomatoes.viewer.rating - b.tomatoes.viewer.rating;
-                }); 
-                sortd=null;
-                order=null; 
-            } 
+                   if(sortd==="Imdb" ){                                            
+                        if(order === "Decending" ){                                              
+                        console.log("HIGH TO LOW");
+                        movies.sort((a, b) => {
+                            return b.imdb.rating - a.imdb.rating;
+                        });                                             
+                    }else if(order === "Ascending" ){                                               
+                        console.log("Low TO High");
+                        movies.sort((a, b) => {
+                            return a.imdb.rating - b.imdb.rating;
+                        });                         
+                    }
+                } else if(sortd==="Tomatoes"){                    
+                    if(order === "Ascending"){
+                    console.log("Low TO High");
+                    movies.sort((a, b) => {
+                        return a.tomatoes.viewer.rating - b.tomatoes.viewer.rating;
+                    });                     
+                    }  else if(order === "Decending"){                    
+                    console.log("HIGH TO LOW");
+                    movies.sort((a, b) => {
+                        return b.tomatoes.viewer.rating - a.tomatoes.viewer.rating;
+                        });                     
+                    } 
+                }else if(sortd==="CombinedRating"){                    
+                    if(order === "Ascending"){
+                        console.log("Combined Rating");
+                        movies.forEach(a => {
+                            a.Cr=a.imdb.rating + a.tomatoes.viewer.rating;                        
+                        });
+                        movies.sort((a, b) => {
+                            return b.Cr - a.Cr;
+                        });                                                                                
+                    }
+                    else if(order === "Decending"){                       
+                        console.log("Combined Rating Decending");
+                        movies.forEach(a => {
+                            a.Cr=a.imdb.rating + a.tomatoes.viewer.rating;                            
+                        });
+                        movies.sort((a, b) => {
+                            return b.Cr - a.Cr;
+                        });                        
+                    }
+                }
             rating.innerHTML=movies[i].imdb.rating + movies[i].tomatoes.viewer.rating;
             slno.innerHTML=count+1;
             title.innerHTML=movies[i].title;
