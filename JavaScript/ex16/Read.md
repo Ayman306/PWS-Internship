@@ -10,4 +10,3 @@ Logic Requirements:
 View 5 rows on one page. (pagination)
 Column Sort
 IMDB/Tomato Combined rating.
-Filtering using IMDB/Tomato/Combined rating
