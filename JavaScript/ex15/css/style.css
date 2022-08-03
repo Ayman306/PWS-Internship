@@ -1,0 +1,54 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h2{
+    color: red;
+    text-align: center;
+    padding:20px 0px;
+    font-size: 30px;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+p{
+    text-align: center;
+    padding:10px 0px;   
+    font-size: 20px;
+}
+table{
+    font-size: 15px;
+    margin: auto;
+}
+input[type=button]{
+    width: 100%;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size:15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    cursor: pointer;
+}
+input[type=text]{
+    background-color: aliceblue;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+.restcol{
+    text-align: center;    
+}
+.resetBtn{
+    padding: 10px;
+    background: red;
+    border: none;
+    color: white;
+    width: 10rem;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+        
+}
