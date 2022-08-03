@@ -1,0 +1,32 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #c37e7e;
+}
+table{
+    width: 800px;
+    margin: 0px auto;
+    background: #ebd7d7;
+    padding: 15px;
+    text-align: center;   
+}
+
+td,th{
+    border: 1px solid black;
+}
+th{
+    width: 200px;
+}
+button{
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    background: rgb(150, 150, 252);
+    color: rgb(19, 19, 19);
+    border: none;
+    height: 35px;
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Movie</title>
+</head>
+<body >
+   
+    <table >
+            <td>
+                <select id="box2" onChange="srtD(this);">
+                    <option >-Sort By-</option>
+                    <option value="Imdb">Imdb</option>
+                    <option value="Tomatoes">Tomatoes</option>
+                    <option value="CombinedRating">CombinedRating</option>
+                  </select>
+            </td>
+            <td>
+                <select id="box1" onChange="oderD(this);">
+                    <option >-Sort Order-</option>
+                    <option value="Ascending">Ascending</option>
+                    <option value="Decending">Decending</option>
+                  </select>
+            </td>
+            <td>
+                <button onclick="sortNow()">Sort Now</button>
+            </td>            
+        </tr>        
+    <table id="rows"></table>
+    <table class="button">
+        <tr>
+            <td id="slno"></td>
+            <td ><button onclick="prevPage()" id="prev">Previous</button></td>
+            <td ><button onclick="nextPage()" id="next">Next</button></td>
+           </tr>
+    </table>
+</body>
+<script src="./scriptcopy.js"></script>
+</html>
+
