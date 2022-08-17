@@ -1,0 +1,37 @@
+<app-test (childEvent)="message=$event" [parentData]="name"></app-test>
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!    
+  </h1>
+  <h3>{{message}}</h3>
+</div>
+<h2>String transformations</h2>
+  <!-- String transformations -->
+  <h4>{{text | uppercase}}</h4>
+  <h4>{{text | lowercase}}</h4>
+  <h4>{{text | titlecase}}</h4>
+  <h4>{{text | slice:1:3}}</h4>
+  <h4>{{person | json}}</h4>
+  <h2>Number pipes</h2>
+  <!-- number pipes  -->
+  <h4>{{random | number:'3.3-4'}}</h4>
+  <!-- percent pipe  -->
+  <h4>{{per | percent}}</h4>
+  <!-- currency pipe  -->
+  <h4>{{random |currency}}</h4>
+  <!-- currency with the country  -->
+  <h4>{{random |currency:'INR'}}</h4>
+  <!-- date pipes  -->
+  <h2>Date pipes</h2>
+  <h4>{{date | date:'short'}}</h4>
+  <h4>{{date | date:'shortDate'}}</h4>
+  <h4>{{date | date:'shortTime'}}</h4>
+  <h4>{{date | date:'medium'}}</h4>
+  <h4>{{date | date:'mediumDate'}}</h4>
+  <h4>{{date | date:'mediumTime'}}</h4>
+  <h4>{{date | date:'long'}}</h4>
+  <h4>{{date | date:'longDate'}}</h4>
+  <h4>{{date | date:'longTime'}}</h4>
+  <app-employee-list></app-employee-list>
+  <app-employee-detail></app-employee-detail>
+
