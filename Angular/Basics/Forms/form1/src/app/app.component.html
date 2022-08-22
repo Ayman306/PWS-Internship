@@ -1,0 +1,115 @@
+<div class="container-fluid">
+  <h1>BootCamp Enrollment Forms</h1>
+
+
+  <form action="" #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+    {{userForm.value | json}}
+      <hr>
+      {{userModal |json}}
+
+
+    <div class="form-group">
+      <label for="">Name</label>
+      <!-- if name is invalid and it hasnt been touched , then add the class  is-invaid  -->
+      <input type="text" name="userName"
+      #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control"
+      [(ngModel)]="userModal.name" required>
+
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" class="form-control" name="email" pattern="(^$|^.*@.*\..*$)"
+      [(ngModel)]="userModal.email"
+      #email="ngModel"
+      [class.is-invalid]="email.invalid && email.touched"
+       required>
+      <small class="text-danger"[class.d-none]="email.valid || email.untouched">invalid email</small>
+    </div>
+
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="tel" #phone="ngModel" class="form-control" name="phone"
+      pattern="^\d{10}$"
+      [class.is-invalid]="phone.invalid && phone.touched"
+      [(ngModel)]="userModal.phone" required>
+
+      <!-- <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone Number is required and  must be 10 digits</small> -->
+      <div *ngIf="phone.errors && (phone.invalid ||phone.touched)">
+          <small class="text-danger" *ngIf="phone.errors?.['required']">Phone Number is required </small>
+          <small class="text-danger" *ngIf="phone.errors?.['pattern']">Phone Number must be 10 digits </small>
+      </div>
+    </div>
+
+
+
+    <div class="form-group" >
+      <select (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" class="custom-select form-control my-3" name="topic" #topic="ngModel" [class.is-invalid]="topicError && topic.touched"
+      [(ngModel)]="userModal.topic">
+        <option value="default">I am Intrested in</option>
+        <option *ngFor="let topic of topics">{{topic}}</option>
+      </select>
+      <small class="text-danger"[class.d-none]="!topicError ||topic.untouched">Please choose a topic</small>
+
+
+
+
+    </div>
+
+
+
+
+    <div class="mb-3">
+      <label>Time-Preference</label>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" name="timePreference" value="morning" [(ngModel)]="userModal.timePreference">
+        <label for="" class="form-check-label">Morning (9Am - 12Pm)</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" name="timePreference" value="evening" [(ngModel)]="userModal.timePreference">
+        <label for="" class="form-check-label">Evening (5Pm - 8Pm)</label>
+      </div>
+    </div>
+
+
+
+
+    <!-- <div [(ngModel)]Group="address">
+      <div class="from-group">
+        <label for="">Street</label>
+        <input type="text" name="street" class="form-control" [(ngModel)]>
+      </div>
+      <div class="from-group">
+        <label for="">City</label>
+        <input type="text" name="city" class="form-control" [(ngModel)]>
+      </div>
+      <div class="from-group">
+        <label for="">State</label>
+        <input type="text" name="state" class="form-control" [(ngModel)]>
+      </div>
+      <div class="from-group">
+        <label for="">Postal Code</label>
+        <input type="text" name="postalCode" class="form-control" [(ngModel)]>
+      </div>
+    </div> -->
+
+
+
+
+
+
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" name="subscribe" [(ngModel)]="userModal.subscribe">
+      <label  class="form-check-label">
+        Send me promotional offers
+      </label>
+    </div>
+
+    <button [disabled]="userForm.form.invalid || topicError" type="submit" class="btn btn-primary">
+      Submit Form
+    </button>
+  </form>
+</div>
