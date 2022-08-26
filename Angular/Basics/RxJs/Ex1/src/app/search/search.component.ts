@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, elementAt, filter, first, from, last, Observable, take, takeLast, takeWhile } from 'rxjs';
+import { count, debounceTime, distinct, elementAt, filter, first, from, last, max, min, Observable, skip, take, takeLast, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -12,6 +12,8 @@ export class SearchComponent implements OnInit {
   // name!: FormControl;
   categories=["Pizza","Burger","Noodels","Pasta","Fried Rice","Chicks"];
   category$:Observable<any>=from(this.categories);
+  values=[12,22,32,43,4,9,8,98,69,99];
+  values$:Observable<any>=from(this.values);
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
@@ -21,20 +23,32 @@ export class SearchComponent implements OnInit {
    this.searchForm.get('name')?.valueChanges?.pipe(
     // take(2),
     // takeWhile((v)=> this.checkCondition(v)),
-    filter((v)=>this.checkCount(v)),
+    // filter((v)=>this.checkCount(v)),
     
-    // debounceTime(2000)
+     debounceTime(2000)
    )
     .subscribe(data=>{
       console.log(data);
       this.category$.pipe(
         // takeLast(2),
-        // first()
-        // last()
+        // first(),
+        // last(),
         // elementAt(2)
+        // distinct(),
+        // skip(2),
+        // count()
       ).subscribe(data1=>{
         console.log(data1);
-      })
+      });
+      this.values$.pipe(
+        filter((v)=>this.even(v)),
+        min()
+      ).subscribe(data2 =>{
+        console.log(data2);
+      });
+      
+      
+      
     });
    
   }
@@ -43,6 +57,9 @@ export class SearchComponent implements OnInit {
   }
   checkCount(v:any){
     return v.length <10? true:false;
+  }
+   even(v:any){
+    return v%2==0? true :false;
   }
   readValue(){     }
 }
